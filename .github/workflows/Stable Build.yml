@@ -44,8 +44,8 @@ jobs:
       run: |
         export ARCH=arm64
         export PATH="$CLANG_PATH/bin:$GCC64_PATH/bin:$GCC32_PATH/bin:$PATH"
-        export KBUILD_BUILD_USER=Brutalist
-        export KBUILD_BUILD_HOST=MoratRealm
+        export KBUILD_BUILD_USER=MiDoNaSR
+        export KBUILD_BUILD_HOST=MiDoNaSR
         export KBUILD_COMPILER_STRING="$CLANG_PATH/clang"
         export BUILD_DATE=$BUILD_DATE
         export CFLAGS_EXTRA="-DBUILD_DATE=$BUILD_DATE"
@@ -69,10 +69,10 @@ jobs:
         cp out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img
         cp out/arch/arm64/boot/dtb.img AnyKernel3/dtb.img
         cd AnyKernel3
-        zip -r "../BruthXotic-${{ github.ref_name }}-${{ env.BUILD_TIME }}.zip" *
+        zip -r "../StriXotic-MeMeDo-${{ github.ref_name }}-${{ env.BUILD_TIME }}.zip" *
         
     - name: 📤 Upload Flashable zip
       uses: actions/upload-artifact@v4
       with:
-        name: BruthXotic-${{ github.ref_name }}-${{ env.BUILD_TIME }}
+        name: StriXotic-MeMeDo-${{ github.ref_name }}-${{ env.BUILD_TIME }}
         path: AnyKernel3/*

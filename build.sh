@@ -40,8 +40,8 @@ curl -LSs "https://raw.githubusercontent.com/Mr-Morat/KernelSU-Next/stable/kerne
 echo "🛠️ Building kernel..."
 export ARCH=arm64
 export PATH="$CLANG_PATH/bin:$GCC64_PATH/bin:$GCC32_PATH/bin:$PATH"
-export KBUILD_BUILD_USER=Brutalist
-export KBUILD_BUILD_HOST=MoratRealm
+export KBUILD_BUILD_USER=MiDoNaSR
+export KBUILD_BUILD_HOST=MiDoNaSR
 export KBUILD_COMPILER_STRING="$($CLANG_PATH/bin/clang --version | head -n1)"
 export CFLAGS_EXTRA="-DBUILD_DATE=$BUILD_DATE"
 make O=out ARCH=arm64 sweet_defconfig
@@ -56,7 +56,7 @@ mv out/.config out/sweet_defconfig.txt
 
 # Prepare AnyKernel3
 echo "📂 Preparing AnyKernel3..."
-git clone --depth=1 https://github.com/Mr-Morat/anykernel3 -b BruthXotic AnyKernel3
+git clone --depth=1 https://github.com/MiDoNaSR545/anykernel3 AnyKernel3
 cp out/arch/arm64/boot/Image.gz AnyKernel3/Image.gz
 cp out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img
 cp out/arch/arm64/boot/dtb.img AnyKernel3/dtb.img
@@ -64,5 +64,5 @@ cp out/arch/arm64/boot/dtb.img AnyKernel3/dtb.img
 # Create Flashable ZIP
 echo "📦 Creating flashable zip..."
 cd AnyKernel3
-zip -r "../BruthXotic-${BRANCH_NAME}-${BUILD_TIME}.zip" *
+zip -r "../StriXotic-MeMeDo-${BUILD_TIME}.zip" *
 echo "✅ Build finished"
