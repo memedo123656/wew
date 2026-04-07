@@ -2880,6 +2880,12 @@ struct do_proc_dointvec_minmax_conv_param {
 	int *max;
 };
 
+int proc_dou8vec_minmax(const struct ctl_table *table, int write,
+			void *buffer, size_t *lenp, loff_t *ppos)
+{
+	return -ENOSYS;
+}
+
 static int do_proc_dointvec_minmax_conv(bool *negp, unsigned long *lvalp,
 					int *valp,
 					int write, void *data)
